@@ -2,6 +2,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const app = express();
+const cors = require('cors')
 
 // IMPORT RUTES
 const RouteNotes = require('./routes/AllNoteRoute');
@@ -14,6 +15,12 @@ const RouteDeleteNote = require('./routes/DeleteNoteRoute');
 // MIDDLEWARE
 app.use(morgan('dev'));
 app.use(express.json());
+
+app.use(cors({
+    origin: "*",
+}))
+
+
 
 // RUTES
 app.use('/notes', RouteNotes);
