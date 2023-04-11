@@ -5,7 +5,6 @@ const app = express();
 const cors = require('cors')
 
 // IMPORT RUTES
-const RouteNotes = require('./routes/AllNoteRoute');
 const RouteUsers = require('./routes/AllUserRoute')
 const RouteUserCreate = require('./routes/CreateUserRoute');
 const RouteNoteCreate = require('./routes/CreateNoteRoute');
@@ -23,8 +22,7 @@ app.use(cors({
 
 
 // RUTES
-app.use('/notes', RouteNotes);
-app.use('/users', RouteUsers);
+app.use('/users/note', RouteUsers);
 app.use('/create/users', RouteUserCreate);
 app.use('/create/note', RouteNoteCreate);
 
