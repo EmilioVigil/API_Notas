@@ -7,7 +7,7 @@ route.get('/', async (req, res) => {
     const allUser = await User.find({
         userName: data.username
     }).populate('notes')
-    res.send(allUser)
+    res.send(allUser[0].notes)
 })
 
 
